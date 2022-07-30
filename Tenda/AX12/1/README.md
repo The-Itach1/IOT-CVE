@@ -12,17 +12,17 @@ This vulnerability is a vulnerability overflow triggered in the **sub_42FDE4** f
 
 First, sub_430124 calls the sub_42FFF8 function.
 
-![](.\image\Snipaste_2022-07-30_18-20-26.png)
+![](https://github.com/The-Itach1/IOT-CVE/blob/master/Tenda/AX12/1/image/Snipaste_2022-07-30_18-20-26.png)
 
 In the **sub_42FFF8** function, the two parameters **bindnum** and **list** passed in by the post are obtained, and the address of the list value is used as the parameter of the **sub_42FDE4** function.
 
-![](.\image\Snipaste_2022-07-30_18-28-01.png)
+![](https://github.com/The-Itach1/IOT-CVE/blob/master/Tenda/AX12/1/image/Snipaste_2022-07-30_18-28-01.png)
 
 
 
 **sub_42FDE4**, **strcpy(v16, v6)**, **v6** is the incoming **list** parameter, and no length limit and security check are used in this process, so the attacker can cause stack overflow through a long **list** and achieve denial of service attack.
 
-![](.\image\Snipaste_2022-07-30_18-33-51.png)
+![](https://github.com/The-Itach1/IOT-CVE/blob/master/Tenda/AX12/1/image/Snipaste_2022-07-30_18-33-51.png)
 
 
 
