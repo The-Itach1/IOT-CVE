@@ -13,7 +13,7 @@ Attack effect: execute any command
 The reason for this vulnerability is that in the provided fast_setting_internet_set interface, the called function sub_42581C does not filter the value of the controllable parameter staticIp passed in by the user, resulting in command injection.
 
 sub_42581C()
-![](D:\learning record\学术报告\路由器\Tenda\AX12\2\image\1.png)
+![](https://github.com/The-Itach1/IOT-CVE/blob/master/Tenda/AX12/2/image/1.png)
 
 It first obtains the value of the staticIp parameter and assigns it to v4, then calls the sprintf function to format the input to the v5 string, and finally calls doSystemCmd_route to execute the command. In the process, no character filtering is performed on the value of staticIp, which means that we can construct any command through this parameter, and finally enter doSystemCmd_route for execution.
 
@@ -35,7 +35,7 @@ print(r.content)
 ```
 
 The effect of the attack is as follows. The admin file that saves the userpass in the configuration directory is copied to tmp/hack.
-![](.\image\2.png)
+![](https://github.com/The-Itach1/IOT-CVE/blob/master/Tenda/AX12/2/image/2.png)
 
 ### Suggest
 
