@@ -11,7 +11,7 @@
 该漏洞产生的原因是提供的fast_setting_internet_set接口中，调用的函数sub_42581C内部，未对用户传入的可控参数staticIp的值进行过滤，而造成的命令注入。
 
 sub_42581C()
-![](.\image\1.png)
+![](./image/1.png)
 
 其先获取到staticIp参数的值赋值给到v4，然后调用sprintf函数格式化输入到v5字符串，最后调用doSystemCmd_route执行命令。其过程中未对staticIp的值进行任何字符过滤处理，这意味着我们可以通过这个参数构造任意命令，最终进入到doSystemCmd_route执行。
 
@@ -33,7 +33,7 @@ print(r.content)
 ```
 
 攻击效果如下，是将配置目录下保存着userpass的admin文件给拷贝到了tmp/hack中。
-![](.\image\2.png)
+![](./image/2.png)
 
 ## 建议
 
