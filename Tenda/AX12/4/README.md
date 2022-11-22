@@ -8,7 +8,7 @@ Impact: Denial of Service(DoS)
 ## Vulnerability cause ##
 In the /goform/fast_setting_wifi_set interface, the ssid parameter and the sprintf function passed through it do not limit the length, which will cause stack overflow and achieve the effect of a DoS denial of service attack.
 
-![](D:\learning record\学术报告\路由器\Tenda\AX12\4\image\1.png)
+![](./image/1.png)
 
 
 
